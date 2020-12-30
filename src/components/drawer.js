@@ -6,6 +6,10 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub, faFacebookMessenger } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -30,7 +34,22 @@ const useStyles = makeStyles((theme) => ({
   text: {
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
-    textAlign: "justify"
+    textAlign: "justify",
+    marginTop: theme.spacing(5),
+    marginBottom: theme.spacing(5),
+  },
+  fontAwesomeIcon: {
+    fontSize: '48px',
+    padding: theme.spacing(2),
+    '&:hover': {
+      color: theme.palette.primary.main,
+   },
+  },
+  iconContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginTop: theme.spacing(2),
   }
 }));
 
@@ -46,6 +65,16 @@ const MyDrawer = () => {
     }
     setOpenDrawer(open);
   };
+
+  const urlLinkedin = 'https://www.linkedin.com/in/baptiste-lechat-3686a6174/'
+  const urlGithub = 'https://github.com/baptistelechat'
+  const urlMail = 'mailto:baptistelechat@outlook.fr'
+  const urlMessenger = 'https://m.me/baptistelechat72'
+
+  const openLink = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
   
   const list = () => (
     <div
@@ -60,8 +89,13 @@ const MyDrawer = () => {
       </ListItem>
       <p className={classes.text}>📖 Dans le cadre de ma formation en Mastère "Expert en Développement Logiciel, Mobile & IoT" au sein du Ynov Campus 👨‍💻 de Nantes, je vous propose de répondre à plusieurs questions sur la thématique que je souhaite développer dans mon mémoire de fin de formation : La transition numérique dans le domaine du bâtiment : les évolutions, son impact et l’avenir du monde de la construction.</p>
       <Divider />
-      <p className={classes.text}>Baptiste LECHAT</p>
-      
+      <div className={classes.iconContainer}>
+        <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faLinkedin} onClick={() => openLink(urlLinkedin)}/>
+        <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faGithub} onClick={() => openLink(urlGithub)}/>
+        <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faEnvelope} onClick={() => openLink(urlMail)}/>
+        <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faFacebookMessenger} onClick={() => openLink(urlMessenger)}/>
+        <p>Baptiste LECHAT</p>
+      </div>
     </div>
   );
 
