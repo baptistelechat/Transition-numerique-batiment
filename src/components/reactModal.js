@@ -5,8 +5,8 @@ import Modal from '@material-ui/core/Modal';
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 500,
-    backgroundColor: theme.palette.background.paper,
+    width: 500, 
+    backgroundColor: '#EFF3F0',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     [theme.breakpoints.down('md')]: {

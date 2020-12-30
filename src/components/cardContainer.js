@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'center',
     paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(5)
+    paddingBottom: theme.spacing(5),
+    backgroundColor: '#EFF3F0'
   },
   paper: {
     display: 'flex',
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 25,
     fontWeight: 'bold',
     color: "white",
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
     [theme.breakpoints.down('md')]: {
       width: '24vw',
     },
@@ -83,7 +84,7 @@ const CardContainer = () => {
     const cards = []
     const nbCard = 42
     const nbCardEnabled = 1
-
+    
     for (let i = 1; i <= nbCard; i++) {
       cards.push(
         range(1,nbCardEnabled).includes(i) ?

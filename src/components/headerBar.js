@@ -23,9 +23,6 @@ const useStyles = makeStyles((theme) => ({
   fontAwesomeIcon: {
     fontSize: '24px',
     padding: theme.spacing(2),
-    // [theme.breakpoints.down('md')]: {
-    //   display: 'none',
-    // },
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },

@@ -14,6 +14,8 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 const useStyles = makeStyles((theme) => ({
   list: {
     width: '25vw',
+    height: '100vh',
+    backgroundColor: '#EFF3F0',
     [theme.breakpoints.down('md')]: {
       width: '50vw',
     },
@@ -94,7 +96,7 @@ const MyDrawer = () => {
         <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faGithub} onClick={() => openLink(urlGithub)}/>
         <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faEnvelope} onClick={() => openLink(urlMail)}/>
         <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faFacebookMessenger} onClick={() => openLink(urlMessenger)}/>
-        <p>Baptiste LECHAT</p>
+        <p style={{fontWeight: 'bold'}}>Baptiste LECHAT - M2 LMIOT</p>
       </div>
     </div>
   );
