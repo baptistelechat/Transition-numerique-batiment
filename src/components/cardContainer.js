@@ -9,6 +9,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(5)
   },
   paper: {
     display: 'flex',
@@ -34,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     // width: "12vw",
-    width: 'calc(100vw / 7)',
-    height: "12vh",
+    width: '12vw',
+    height: "15vh",
     margin: theme.spacing(2),
     fontSize: 25,
     fontWeight: 'bold',
@@ -79,10 +81,10 @@ const CardContainer = () => {
 
   const paperList = () => {
     const cards = []
-    const nbCard = 44
-    const nbCardEnabled = 0
+    const nbCard = 42
+    const nbCardEnabled = 1
 
-    for (let i = 1; i < nbCard; i++) {
+    for (let i = 1; i <= nbCard; i++) {
       cards.push(
         range(1,nbCardEnabled).includes(i) ?
         <Paper
