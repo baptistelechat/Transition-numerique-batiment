@@ -8,30 +8,45 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
+    justifyContent: 'center',
   },
   paper: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: "12vw",
+    // width: "12vw",
+    width: '12vw',
     height: "15vh",
     margin: theme.spacing(2),
     fontSize: 25,
     fontWeight: 'bold',
     color: "white",
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.main,
+    [theme.breakpoints.down('md')]: {
+      width: '24vw',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '36vw',
+    },
   },
   paperDisable: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: "12vw",
-    height: "15vh",
+    // width: "12vw",
+    width: 'calc(100vw / 7)',
+    height: "12vh",
     margin: theme.spacing(2),
     fontSize: 25,
     fontWeight: 'bold',
     color: theme.palette.text.disabled,
-    backgroundColor: theme.palette.background.default
+    backgroundColor: theme.palette.background.default,
+    [theme.breakpoints.down('md')]: {
+      width: '24vw',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '36vw',
+    },
   },
 }));
 
@@ -65,7 +80,7 @@ const CardContainer = () => {
   const paperList = () => {
     const cards = []
     const nbCard = 44
-    const nbCardEnabled = 2
+    const nbCardEnabled = 0
 
     for (let i = 1; i < nbCard; i++) {
       cards.push(
