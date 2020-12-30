@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faFacebookMessenger } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import YnovWhite from '../image/ynov/ynov_white.png'
 
 import MyDrawer from './drawer'
 
@@ -30,6 +31,16 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.primary.light,
    },
   },
+  ynov: {
+    height:'35px',
+    padding: theme.spacing(1),
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+    },
+  }
 }));
 
 
@@ -40,6 +51,7 @@ const HeaderBar = () => {
   const urlGithub = 'https://github.com/baptistelechat'
   const urlMail = 'mailto:baptistelechat@outlook.fr'
   const urlMessenger = 'https://m.me/baptistelechat72'
+  const urlYnov = 'https://www.ynov.com/formation/ynov-masteres/expert-developpement-mobile-iot/'
 
   const openLink = (url) => {
     const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -54,6 +66,9 @@ const HeaderBar = () => {
           <Typography variant="h6" className={classes.title}>
             La transition numérique dans le domaine du bâtiment - Baptiste LECHAT
           </Typography>
+          <div className={classes.iconContainer}>
+            <img src={YnovWhite} alt="logo Ynov" className={classes.ynov} onClick={() => openLink(urlYnov)}/>
+          </div>
           <div className={classes.iconContainer}>
             <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faLinkedin} onClick={() => openLink(urlLinkedin)}/>
             <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faGithub} onClick={() => openLink(urlGithub)}/>

@@ -9,6 +9,8 @@ import Divider from '@material-ui/core/Divider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faFacebookMessenger } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import YnovBlack from '../image/ynov/ynov_black.png'
+import Pop from '../image/Pop_Baptiste.png'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -45,13 +47,28 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     '&:hover': {
       color: theme.palette.primary.main,
-   },
+    },
   },
   iconContainer: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
     marginTop: theme.spacing(2),
+  },
+  ynov: {
+    height:'75px',
+    '&:hover': {
+      backgroundColor: theme.palette.secondary.light,
+    },
+  },
+  pop: {
+    height: '40px',
+    borderRadius: '50%',
+    marginLeft: theme.spacing(6),
+    marginRight: theme.spacing(1),
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(4),
+    },
   }
 }));
 
@@ -72,6 +89,7 @@ const MyDrawer = () => {
   const urlGithub = 'https://github.com/baptistelechat'
   const urlMail = 'mailto:baptistelechat@outlook.fr'
   const urlMessenger = 'https://m.me/baptistelechat72'
+  const urlYnov = 'https://www.ynov.com/formation/ynov-masteres/expert-developpement-mobile-iot/'
 
   const openLink = (url) => {
     const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -89,14 +107,20 @@ const MyDrawer = () => {
         <ListItemIcon><MenuIcon className={classes.iconHeader}/></ListItemIcon>
         <h2 className={classes.title}>La transition numérique dans le domaine du bâtiment</h2>
       </ListItem>
-      <p className={classes.text}>📖 Dans le cadre de ma formation en Mastère "Expert en Développement Logiciel, Mobile & IoT" au sein du Ynov Campus 👨‍💻 de Nantes, je vous propose de répondre à plusieurs questions sur la thématique que je souhaite développer dans mon mémoire de fin de formation : La transition numérique dans le domaine du bâtiment : les évolutions, son impact et l’avenir du monde de la construction.</p>
+      <p className={classes.text}>Dans le cadre de ma formation en Mastère "Expert en Développement Logiciel, Mobile & IoT" au sein du Ynov Campus de Nantes, je vous propose de répondre à plusieurs questions sur la thématique que je souhaite développer dans mon mémoire de fin de formation : La transition numérique dans le domaine du bâtiment : les évolutions, son impact et l’avenir du monde de la construction.</p>
       <Divider />
       <div className={classes.iconContainer}>
         <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faLinkedin} onClick={() => openLink(urlLinkedin)}/>
         <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faGithub} onClick={() => openLink(urlGithub)}/>
         <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faEnvelope} onClick={() => openLink(urlMail)}/>
         <FontAwesomeIcon className={classes.fontAwesomeIcon} icon={faFacebookMessenger} onClick={() => openLink(urlMessenger)}/>
-        <p style={{fontWeight: 'bold'}}>Baptiste LECHAT - M2 LMIOT</p>
+        <ListItem>
+          <img src={Pop} alt="Pop Baptiste" className={classes.pop}/>
+          <p style={{fontWeight: 'bold'}}>Baptiste LECHAT - M2 LMIOT</p>
+        </ListItem>
+      </div>
+      <div className={classes.iconContainer}>
+        <img src={YnovBlack} alt="logo Ynov" className={classes.ynov} onClick={() => openLink(urlYnov)}/>
       </div>
     </div>
   );
