@@ -16,7 +16,7 @@ import Pop from '../image/Pop_Baptiste.png'
 const useStyles = makeStyles((theme) => ({
   list: {
     width: '25vw',
-    height: '100vh',
+    height: '1000%',
     backgroundColor: '#EFF3F0',
     [theme.breakpoints.down('md')]: {
       width: '50vw',
@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
   ynov: {
     height:'75px',
+    marginBottom: theme.spacing(2),
     '&:hover': {
       backgroundColor: theme.palette.secondary.light,
     },
