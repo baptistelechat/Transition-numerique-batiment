@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paperComingSoon: {
     width: 500,
-    height:'25vh',
+    height:'35vh',
     backgroundColor: '#EFF3F0',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
