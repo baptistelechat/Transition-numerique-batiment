@@ -48,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       color: theme.palette.primary.main,
     },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '38px',
+      padding: theme.spacing(1),
+    },
   },
   iconContainer: {
     display: 'flex',
