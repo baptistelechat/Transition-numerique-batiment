@@ -64,7 +64,7 @@ const HeaderBar = () => {
         <Toolbar>
           <MyDrawer/>
           <Typography variant="h6" className={classes.title}>
-            La transition numérique dans le domaine du bâtiment - Baptiste LECHAT
+            La transition numérique dans le domaine du bâtiment
           </Typography>
           <div className={classes.iconContainer}>
             <img src={YnovWhite} alt="logo Ynov" className={classes.ynov} onClick={() => openLink(urlYnov)}/>
