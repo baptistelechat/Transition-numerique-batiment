@@ -1,6 +1,6 @@
 {
   "short_name": "Transition numérique du bâtiment",
-  "name": "La transition numérique dans le domaine du bâtiment - Baptiste LECHAT",
+  "name": "La transition numérique dans le domaine du bâtiment",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +19,9 @@
     }
   ],
   "start_url": ".",
+  "lang": "fr",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#34A1BF",
+  "background_color": "#EFF3F0",
+  "orientation": "portrait-primary"
 }
