@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import CloseIcon from '@material-ui/icons/Close';
+import ScrollArea from 'react-scrollbar'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -12,12 +13,17 @@ const useStyles = makeStyles((theme) => ({
     height:'85vh',
     backgroundColor: '#EFF3F0',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(3),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(5),
     [theme.breakpoints.down('md')]: {
       width: '50vw',
     },
     [theme.breakpoints.down('sm')]: {
-      width: '70vw',
+      width: '100vw',
+      height:'100vh',
+      paddingLeft: theme.spacing(7),
     },
   },
   paperComingSoon: {
@@ -36,6 +42,27 @@ const useStyles = makeStyles((theme) => ({
   iconHeader: {
     fontSize: 30,
   },
+  tag: {
+    marginTop: theme.spacing(1),
+    fontWeight: 'bold',
+    color: theme.palette.primary.main
+  },
+  title: {
+    marginBottom: theme.spacing(1),
+    fontSize: '1.5rem',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1.5rem',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.25rem',
+    },
+  },
+  scrollbar: {
+    height: "85vh",
+    [theme.breakpoints.down('sm')]: {
+      height: "100vh"
+    },
+  },
 }));
 
 export default function ReactModal(props) {
@@ -47,8 +74,7 @@ export default function ReactModal(props) {
 
   const body = () => {
 
-    const height = '65%'
-    const width = '100%'
+    const width = '90%'
 
     if (!props.enable) {
       return (
@@ -67,16 +93,19 @@ export default function ReactModal(props) {
         case 1:
           // console.log(1);
           return (
-            <Paper style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className={classes.paper}>
-              <ListItem>
-                <ListItemIcon><CloseIcon onClick={handleClose} className={classes.iconHeader}/></ListItemIcon>
-                <h2 id="simple-modal-title">#{props.id} - Text in a modal</h2>
-              </ListItem>
-              <p id="simple-modal-description">
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </p>
-              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6747459356830257152" height={height} width={width} frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
-            </Paper>
+            
+              <Paper style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className={classes.paper}>
+                <ScrollArea className={classes.scrollbar}>
+                  <ListItem>
+                    <ListItemIcon><CloseIcon onClick={handleClose} className={classes.iconHeader}/></ListItemIcon>
+                    <h2 id="simple-modal-title" className={classes.title}>#{props.id} - Y avait-il des cours d'informatique et /ou de développement appliqués au bâtiment dans votre cursus scolaire ?</h2>
+                  </ListItem>
+                  <p id="simple-modal-description" className={classes.tag}>
+                  #Bâtiment #Numérique #Formation #Ynov
+                  </p>
+                  <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6751828402178682880" height="1206" width={width} frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+                </ScrollArea>
+              </Paper>
           )
           break
 
