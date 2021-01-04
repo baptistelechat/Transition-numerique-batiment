@@ -39,6 +39,11 @@ const useStyles = makeStyles((theme) => ({
       width: '70vw',
     },
   },
+  ListItem: {
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7vh',
+    },
+  },
   iconHeader: {
     fontSize: 30,
   },
@@ -96,7 +101,7 @@ export default function ReactModal(props) {
             
               <Paper style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className={classes.paper}>
                 <ScrollArea className={classes.scrollbar}>
-                  <ListItem style={{marginTop: '8vh'}}>
+                  <ListItem className={classes.ListItem}>
                     <ListItemIcon><CloseIcon onClick={handleClose} className={classes.iconHeader}/></ListItemIcon>
                     <h2 id="simple-modal-title" className={classes.title}>#{props.id} - Y avait-il des cours d'informatique et /ou de développement appliqués au bâtiment dans votre cursus scolaire ?</h2>
                   </ListItem>
