@@ -74,7 +74,7 @@ export default function ReactModal(props) {
 
   const body = () => {
 
-    const width = '90%'
+    const width = '87%'
 
     if (!props.enable) {
       return (
