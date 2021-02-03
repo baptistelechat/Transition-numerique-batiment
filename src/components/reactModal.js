@@ -288,7 +288,6 @@ export default function ReactModal(props) {
                 </ScrollArea>
               </Paper>
             )
-
             
             case 13:
             return (
@@ -302,6 +301,22 @@ export default function ReactModal(props) {
                   #Bâtiment #Numérique #BIM #Construction #Ynov
                   </p>
                   <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6761897933223800832" height="1152" width={width} frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+                </ScrollArea>
+              </Paper>
+            )
+
+            case 14:
+            return (
+              <Paper style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className={classes.paper}>
+                <ScrollArea className={classes.scrollbar}>
+                  <ListItem className={classes.ListItem}>
+                    <ListItemIcon><CloseIcon onClick={handleClose} className={classes.iconHeader}/></ListItemIcon>
+                    <h2 id="simple-modal-title" className={classes.title}>#{props.id} -  Pensez-vous que se lancer dans le BIM aujourd'hui est une bonne idée ?</h2>
+                  </ListItem>
+                  <p id="simple-modal-description" className={classes.tag}>
+                  #Bâtiment #Numérique #BIM #Entreprise #Ynov
+                  </p>
+                  <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6762619196795830272" height="1133" width={width} frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
                 </ScrollArea>
               </Paper>
             )
