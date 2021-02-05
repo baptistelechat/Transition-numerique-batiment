@@ -83,7 +83,7 @@ const CardContainer = () => {
   const paperList = () => {
     const cards = []
     const nbCard = 42
-    const nbCardEnabled = 14
+    const nbCardEnabled = 15
     for (let i = 1; i <= nbCard; i++) {
       cards.push(
         range(1,nbCardEnabled).includes(i) ?
