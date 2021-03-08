@@ -529,6 +529,22 @@ export default function ReactModal(props) {
               </Paper>
             )
 
+            case 28:
+            return (
+              <Paper style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className={classes.paper}>
+                <ScrollArea className={classes.scrollbar}>
+                  <ListItem className={classes.ListItem}>
+                    <ListItemIcon><CloseIcon onClick={handleClose} className={classes.iconHeader}/></ListItemIcon>
+                    <h2 id="simple-modal-title" className={classes.title}>#{props.id} - Pensez-vous que l’utilisation de casque de chantier intégrant des lunettes de réalité augmentée sont l’avenir des chantiers de construction ?</h2>
+                  </ListItem>
+                  <p id="simple-modal-description" className={classes.tag}>
+                  #Bâtiment #VR #RA #3D #Construction #Ynov
+                  </p>
+                  <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6774581002862895105" height="1125" width={width} frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+                </ScrollArea>
+              </Paper>
+            )
+
         default:
           console.log('Error');
       }
