@@ -720,6 +720,22 @@ export default function ReactModal(props) {
                   </ScrollArea>
               </Paper>
             )
+
+            case 40:
+              return (
+                <Paper style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className={classes.paper}>
+                  <ScrollArea className={classes.scrollbar}>
+                    <ListItem className={classes.ListItem}>
+                      <ListItemIcon><CloseIcon onClick={handleClose} className={classes.iconHeader}/></ListItemIcon>
+                      <h2 id="simple-modal-title" className={classes.title}>#{props.id} - Les méthodes de construction de maison imprimé en 3D sont, selon vous, mauvaise pour l'environnement ?</h2>
+                    </ListItem>
+                    <p id="simple-modal-description" className={classes.tag}>
+                    #Bâtiment #Construction #Environnement #Ynov 
+                    </p>
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6784726374998388736" height="1106" width={width} frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+                    </ScrollArea>
+                </Paper>
+              )
             
         default:
           console.log('Error');
