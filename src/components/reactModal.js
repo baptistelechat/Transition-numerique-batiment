@@ -736,6 +736,22 @@ export default function ReactModal(props) {
                     </ScrollArea>
                 </Paper>
               )
+
+            case 41:
+              return (
+                <Paper style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className={classes.paper}>
+                  <ScrollArea className={classes.scrollbar}>
+                    <ListItem className={classes.ListItem}>
+                      <ListItemIcon><CloseIcon onClick={handleClose} className={classes.iconHeader}/></ListItemIcon>
+                      <h2 id="simple-modal-title" className={classes.title}>#{props.id} - Pensez-vous que le développement durable et les domaines environnementaux ont un impact élevé sur la réalisation et la conception d'un projet de construction ?</h2>
+                    </ListItem>
+                    <p id="simple-modal-description" className={classes.tag}>
+                    #Bâtiment #Construction #Environnement #Ynov 
+                    </p>
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6785433028425457664" height="1125" width={width} frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+                    </ScrollArea>
+                </Paper>
+              )
             
         default:
           console.log('Error');
