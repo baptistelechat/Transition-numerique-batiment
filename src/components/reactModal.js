@@ -768,6 +768,35 @@ export default function ReactModal(props) {
                     </ScrollArea>
                 </Paper>
               )
+
+              case 43:
+              return (
+                <Paper style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className={classes.paper}>
+                  <ScrollArea className={classes.scrollbar}>
+                    <ListItem className={classes.ListItem}>
+                      <ListItemIcon><CloseIcon onClick={handleClose} className={classes.iconHeader}/></ListItemIcon>
+                      <h2 id="simple-modal-title" className={classes.title}>#{props.id} - Utilisez-vous au quotidien des technologies d'algorithme ou des intelligences artificielles afin de faciliter votre travail ?</h2>
+                    </ListItem>
+                    <p id="simple-modal-description" className={classes.tag}>
+                    #Bâtiment #Construction #IA #Ynov   
+                    </p>
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6787238356402106368" height="1144" width={width} frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+                    </ScrollArea>
+                </Paper>
+              )
+
+              case 44:
+              return (
+                <Paper style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className={classes.paper}>
+                  <ScrollArea className={classes.scrollbar}>
+                    <ListItem className={classes.ListItem}>
+                      <ListItemIcon><CloseIcon onClick={handleClose} className={classes.iconHeader}/></ListItemIcon>
+                      <h2 id="simple-modal-title" className={classes.title}>⭐ - Remerciement</h2>
+                    </ListItem>
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6787244287819055104" height="719" width={width} frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+                    </ScrollArea>
+                </Paper>
+              )
             
         default:
           console.log('Error');

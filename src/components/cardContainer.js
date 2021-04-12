@@ -82,8 +82,8 @@ const CardContainer = () => {
 
   const paperList = () => {
     const cards = []
-    const nbCard = 43
-    const nbCardEnabled = 42
+    const nbCard = 44
+    const nbCardEnabled = 44
     for (let i = 1; i <= nbCard; i++) {
       cards.push(
         range(1,nbCardEnabled).includes(i) ?
@@ -92,7 +92,7 @@ const CardContainer = () => {
           key={i}
           elevation={3}
           onClick={() => handlePaperClick(i)}>
-            #{i}
+            {i===44 ? "⭐" : `#${i}`}
         </Paper>
         :
         <Paper
